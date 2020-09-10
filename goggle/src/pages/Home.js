@@ -26,8 +26,9 @@ function Home() {
                     src="https://logodix.com/logo/5.gif"
                     alt='goggle logo'
                 />
-                
-                <Search />
+                <div className="home-inputContainer">
+                    <Search />
+                </div>
             </div>
         </div>
     )
