@@ -3,7 +3,7 @@ import './Home.css';
 import { Link } from "react-router-dom";
 import AppsIcon from '@material-ui/icons/Apps';
 import Avatar from '@material-ui/core/Avatar';
-
+import Search from '../components/Search'
 
 function Home() {
     return (
@@ -22,7 +22,12 @@ function Home() {
             </div>
 
             <div className='home-body'>
-
+                <img 
+                    src="https://logodix.com/logo/5.gif"
+                    alt='goggle logo'
+                />
+                
+                <Search />
             </div>
         </div>
     )
