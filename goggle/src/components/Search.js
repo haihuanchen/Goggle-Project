@@ -45,4 +45,5 @@ function Search({hideButtons = false}) {
     )
 }
 
-export default Search
+export default Search;
+
