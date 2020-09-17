@@ -2,7 +2,7 @@ import React from 'react';
 import './SearchPage.css'
 import { useStateValue } from '../StateProvider';
 import useGoogleSearch from '../useGoogleSearch';
-import Response from "../response";
+// import Response from "../response";
 import {Link} from "react-router-dom";
 import Search from "../components/Search";
 import SearchIcon from '@material-ui/icons/Search';
@@ -16,10 +16,10 @@ function SearchPage() {
     const [{term}, dispatch] = useStateValue();
 
     //Live API call
-    // const { data } = useGoogleSearch(term);
+    const { data } = useGoogleSearch(term);
 
     //use previous search results for development purpose since API only accepts 100 calls per day
-    const data = Response;
+    // const data = Response;
     
     console.log(data)
     
@@ -75,10 +75,25 @@ function SearchPage() {
                     </div>
                 </div>
             </div>
-            
-            <div className='searchPage-results'>
 
-            </div>
+            {term && (
+                <div className='searchPage-results'>
+                    <p className='searchPage-resultsCount'>About {data?.searchInformation.formattedTotalResults} results ({data?.searchInformation.formattedSearchTime} seconds) for {term}</p>
+                    
+                    {data?.items.map(item => (
+                        <div className='searchPage-result'>
+                            <a className='searchPage-resultLink' href={item.link}>
+                                {item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src && (
+                                    <img className='searchPage-resultImage' src={item.pagemap?.cse_image[0]?.src} alt="" />
+                                )} 
+                                {item.displayLink}
+                            </a>
+                            <a className='searchPage-resultTitle' href={item.link}> <h2>{item.title}</h2></a>
+                            <p className='searchPage-resultSnippet'>{item.snippet}</p>
+                        </div>
+                    ))}
+                </div>
+            )}
         </div>
     )
 }
