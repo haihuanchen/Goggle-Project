@@ -1,0 +1,51 @@
+.searchPage-header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    align-items: flex-start;
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.searchPage-logo {
+    object-fit: contain;
+    height: 80px;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+
+.searchPage-headerBody > .search > .search-input {
+    margin-top: 10px;
+}
+
+.searchPage-options{
+    display: flex;
+    align-items: center;
+    color: grey;
+}
+
+.searchPage-options a {
+    text-decoration: none;
+    color: gray;
+}
+
+.searchPage-optionsLeft {
+    display: flex;
+}
+
+.searchPage-optionsRight {
+    display: flex;
+    margin-left: 80px;
+}
+
+.searchPage-option {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.searchPage-option a {
+    margin-left: 5px;
+}
