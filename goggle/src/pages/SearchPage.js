@@ -15,7 +15,7 @@ import DescriptionIcon from '@material-ui/icons/Description';
 function SearchPage() {
     const [{term}, dispatch] = useStateValue();
 
-    //Live API call
+    //Live API call with custom Hooks
     const { data } = useGoogleSearch(term);
 
     //use previous search results for development purpose since API only accepts 100 calls per day
